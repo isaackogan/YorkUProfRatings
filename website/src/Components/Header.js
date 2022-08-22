@@ -135,7 +135,7 @@ const Header = () => {
         <HeaderContainer>
             <HeaderSubContainer style={{backgroundColor: "transparent", height: "75px"}}>
                 <Header2XSubContainer>
-                    <FlexCenter><Logo src={`/logo.png?cachebust=429069`}/></FlexCenter>
+                    <FlexCenter><Logo src={`/logo.png?cachebust=42906911`}/></FlexCenter>
                 </Header2XSubContainer>
             </HeaderSubContainer>
             <HeaderSubContainer style={{backgroundColor: "#e31837"}}>
