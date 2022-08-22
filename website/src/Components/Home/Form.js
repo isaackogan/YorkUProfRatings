@@ -7,7 +7,7 @@ const {Component} = require("react")
 const FormContainer = styled.div`
   display: inline-block;
   height: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   margin-top: 20px;
 `;
 

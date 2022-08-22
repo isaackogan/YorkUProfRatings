@@ -6,8 +6,8 @@ import Rating from "./Ratings/Rating";
 const RatingContainer = styled.div`
   width: 100%;
   display: flex;
-  margin-bottom: 10px;
-  margin-top: -10px;
+  margin-bottom: 15px;
+  margin-top: -4px;
 `;
 
 
@@ -47,8 +47,7 @@ class Ratings extends DeclaredComponent {
     }
 
     clearValue() {
-        this.setState({value: null, sections: []});
-        declareState({section: null});
+        this.setState({value: null, teachers: []});
     }
 
     render() {

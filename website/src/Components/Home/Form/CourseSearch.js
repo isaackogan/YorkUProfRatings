@@ -5,7 +5,15 @@ const {serializeSession, declareState} = require("../../../Tools/Toolbox");
 
 
 class CourseSearch extends DeclaredComponent {
-
+    ratingsNotFound = {
+        "title": "Cannot Get Ratings",
+        "body": (
+            <p>
+                Could not find any teachers for this class. You will not be able to see ratings.
+                Select a different class to continue.
+            </p>
+        )
+    }
     constructor(props) {
         super(props);
         this.state = {session: null, courses: [], value: null, showCourses: false};
@@ -56,6 +64,10 @@ class CourseSearch extends DeclaredComponent {
         // When the course changes, get the new course schedule
         if (change) {
             fetch(`https://yorkapi.isaackogan.com/v1/courses/info/${this.state.session}/${change}/teachers`).then(res => res.json()).then(json => {
+
+                if (Object.keys(json).length < 1) {
+                    declareState({errorModal: this.ratingsNotFound});
+                }
 
                 let newJSON = {};
 

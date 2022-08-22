@@ -204,7 +204,12 @@ class RatingBox extends Component {
             "borderBottom": !this.props.last ? "1px solid rgba(0, 0, 0, 0.23)" : null
         }
 
-        let takeAgainPercent = this.data["wouldTakeAgainPercent"] ? `${parseFloat(this.data["wouldTakeAgainPercent"]).toFixed(1)}%` : "N/A";
+        let takeAgainPercent = "N/A";
+        if (this.data["wouldTakeAgainPercent"] && String(this.data["wouldTakeAgainPercent"]) !== "-1") {
+            takeAgainPercent = `${parseFloat(this.data["wouldTakeAgainPercent"]).toFixed(1)}%`;
+        }
+
+
         let avgRating = this.data["avgRating"] ? `${parseFloat(this.data["avgRating"]).toFixed(1)}/5.0` : "N/A";
         let avgDifficulty = this.data["avgDifficulty"] ? `${parseFloat(this.data["avgDifficulty"]).toFixed(1)}/5.0` : "N/A";
 
